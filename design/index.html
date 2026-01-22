@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Creative Portfolio - Mobile Responsive</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#FFD04B',
+              'primary-dark': '#F5C230',
+              'background-light': '#FFFFFF',
+              'background-dark': '#111111',
+              'surface-light': '#F9FAFB',
+              'surface-dark': '#1C1C1C',
+              'text-light': '#1F2937',
+              'text-dark': '#F3F4F6',
+            },
+            fontFamily: {
+              display: ['Space Grotesk', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              pill: '9999px',
+            },
+            animation: {
+              marquee: 'marquee 25s linear infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1;
+        border-radius: 20px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background-color: #475569;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans antialiased selection:bg-black selection:text-primary transition-colors duration-300 w-full overflow-x-hidden"
+  >
+    <header
+      class="bg-primary text-black py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 shadow-sm border-b-2 border-black w-full box-border"
+    >
+      <div class="flex items-center space-x-2">
+        <div
+          class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-primary font-bold border-2 border-black"
+        >
+          D
+        </div>
+        <span class="font-display font-bold text-xl tracking-tight">dev.portfolio</span>
+      </div>
+      <nav class="hidden md:flex space-x-8 font-medium text-sm">
+        <a class="hover:underline decoration-2 underline-offset-4" href="#work">Work</a>
+        <a class="hover:underline decoration-2 underline-offset-4" href="#about">About</a>
+        <a class="hover:underline decoration-2 underline-offset-4" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <a
+          class="hidden sm:flex items-center space-x-1 font-medium hover:text-gray-800 transition-colors"
+          href="https://github.com"
+          target="_blank"
+        >
+          <span>GitHub</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+        <button
+          aria-label="Toggle Dark Mode"
+          class="p-2 rounded-full hover:bg-black/10 transition-colors"
+          onclick="document.documentElement.classList.toggle('dark')"
+        >
+          <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+          <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+        </button>
+        <button
+          aria-label="Menu"
+          class="md:hidden p-2 rounded-full hover:bg-black/10 transition-colors"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </header>
+    <main class="w-full max-w-[100vw] overflow-hidden">
+      <section
+        class="bg-primary text-black pt-12 pb-20 lg:pt-16 lg:pb-24 px-6 md:px-12 relative border-b-2 border-black w-full"
+      >
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div class="relative z-10 space-y-4 lg:space-y-6 lg:col-start-1 lg:row-start-1">
+            <h1
+              class="font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none"
+            >
+              creative.<br />developer
+            </h1>
+            <p class="text-xl md:text-2xl font-medium max-w-lg leading-relaxed text-gray-900">
+              Building delightful digital experiences with clean code, intuitive design, and a focus
+              on user happiness.
+            </p>
+          </div>
+          <div
+            class="relative z-10 flex justify-center lg:justify-end lg:col-start-2 lg:row-span-2 lg:row-start-1 py-4 lg:py-0"
+          >
+            <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+              <svg
+                class="w-full h-full drop-shadow-2xl filter"
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="#FFD04B"
+                  height="120"
+                  rx="60"
+                  stroke="black"
+                  stroke-width="4"
+                  width="120"
+                  x="40"
+                  y="40"
+                ></rect>
+                <path d="M40 80 Q100 40 160 80 L160 60 Q100 20 40 60 Z" fill="black"></path>
+                <rect fill="#333" height="15" rx="5" width="100" x="50" y="55"></rect>
+                <circle cx="75" cy="100" fill="black" r="8"></circle>
+                <circle cx="125" cy="100" fill="black" r="8"></circle>
+                <path
+                  d="M85 130 Q100 145 115 130"
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-width="4"
+                ></path>
+                <circle
+                  cx="170"
+                  cy="160"
+                  fill="#FFF"
+                  r="15"
+                  stroke="black"
+                  stroke-width="3"
+                ></circle>
+                <circle cx="30" cy="50" fill="#FFF" r="10" stroke="black" stroke-width="3"></circle>
+                <rect
+                  fill="white"
+                  height="40"
+                  rx="8"
+                  stroke="black"
+                  stroke-width="3"
+                  width="60"
+                  x="130"
+                  y="130"
+                ></rect>
+                <text
+                  fill="black"
+                  font-family="monospace"
+                  font-size="14"
+                  font-weight="bold"
+                  x="140"
+                  y="155"
+                >
+                  &lt;/&gt;
+                </text>
+              </svg>
+            </div>
+          </div>
+          <div
+            class="relative z-10 flex flex-col sm:flex-row gap-4 pt-2 lg:pt-4 lg:col-start-1 lg:row-start-2 lg:self-start w-full sm:w-auto"
+          >
+            <a
+              class="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-800 transition-transform active:scale-95 shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto"
+              href="#work"
+            >
+              View Projects
+            </a>
+            <a
+              class="bg-white text-black border-2 border-black px-8 py-3 rounded-lg font-bold hover:bg-gray-50 transition-transform active:scale-95 shadow-sm flex items-center justify-center gap-2 w-full sm:w-auto"
+              href="#contact"
+            >
+              Let's Talk
+            </a>
+          </div>
+        </div>
+      </section>
+      <div
+        class="border-b border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark overflow-hidden py-4 w-full"
+      >
+        <div class="relative w-full overflow-hidden whitespace-nowrap">
+          <div class="inline-flex w-max animate-marquee">
+            <div
+              class="flex space-x-12 px-4 text-lg font-display font-medium text-gray-500 dark:text-gray-400 uppercase tracking-widest shrink-0"
+            >
+              <span>JavaScript</span> <span>•</span> <span>React</span> <span>•</span>
+              <span>Tailwind CSS</span> <span>•</span> <span>Node.js</span> <span>•</span>
+              <span>UI/UX Design</span> <span>•</span> <span>Accessibility</span> <span>•</span>
+              <span>Performance</span> <span>•</span> <span>TypeScript</span> <span>•</span>
+              <span>Figma</span> <span>•</span> <span>Next.js</span> <span>•</span>
+            </div>
+            <div
+              class="flex space-x-12 px-4 text-lg font-display font-medium text-gray-500 dark:text-gray-400 uppercase tracking-widest shrink-0"
+            >
+              <span>JavaScript</span> <span>•</span> <span>React</span> <span>•</span>
+              <span>Tailwind CSS</span> <span>•</span> <span>Node.js</span> <span>•</span>
+              <span>UI/UX Design</span> <span>•</span> <span>Accessibility</span> <span>•</span>
+              <span>Performance</span> <span>•</span> <span>TypeScript</span> <span>•</span>
+              <span>Figma</span> <span>•</span> <span>Next.js</span> <span>•</span>
+            </div>
+            <div
+              class="flex space-x-12 px-4 text-lg font-display font-medium text-gray-500 dark:text-gray-400 uppercase tracking-widest shrink-0"
+            >
+              <span>JavaScript</span> <span>•</span> <span>React</span> <span>•</span>
+              <span>Tailwind CSS</span> <span>•</span> <span>Node.js</span> <span>•</span>
+              <span>UI/UX Design</span> <span>•</span> <span>Accessibility</span> <span>•</span>
+              <span>Performance</span> <span>•</span> <span>TypeScript</span> <span>•</span>
+              <span>Figma</span> <span>•</span> <span>Next.js</span> <span>•</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section
+        class="py-24 px-6 md:px-12 bg-background-light dark:bg-background-dark w-full"
+        id="work"
+      >
+        <div class="max-w-5xl mx-auto">
+          <h2 class="font-display font-bold text-4xl mb-6">Selected Works</h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl text-lg">
+            Here are a few projects that define my approach to problem-solving. Find more detailed
+            case studies
+            <a
+              class="underline decoration-primary decoration-2 underline-offset-2 hover:text-black dark:hover:text-white transition-colors"
+              href="#"
+              >on my GitHub</a
+            >.
+          </p>
+          <div
+            class="flex overflow-x-auto gap-3 mb-12 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible no-scrollbar snap-x"
+          >
+            <button
+              class="shrink-0 snap-start px-5 py-2 rounded-full border-2 border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-medium text-sm transition-all shadow-sm"
+            >
+              All Projects
+            </button>
+            <button
+              class="shrink-0 snap-start px-5 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white bg-transparent text-gray-600 dark:text-gray-300 font-medium text-sm transition-all hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              Frontend
+            </button>
+            <button
+              class="shrink-0 snap-start px-5 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white bg-transparent text-gray-600 dark:text-gray-300 font-medium text-sm transition-all hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              Full Stack
+            </button>
+            <button
+              class="shrink-0 snap-start px-5 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white bg-transparent text-gray-600 dark:text-gray-300 font-medium text-sm transition-all hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              Open Source
+            </button>
+            <button
+              class="shrink-0 snap-start px-5 py-2 rounded-full bg-primary/20 text-black dark:text-primary font-medium text-sm border border-transparent"
+            >
+              and much more...
+            </button>
+          </div>
+          <div class="space-y-24">
+            <div class="group">
+              <div class="h-1 w-12 bg-black dark:bg-white mb-6"></div>
+              <div class="flex flex-col md:grid md:grid-cols-12 gap-8 items-start">
+                <div class="order-2 md:order-1 md:col-span-5">
+                  <h3
+                    class="font-display font-bold text-3xl mb-4 group-hover:text-primary transition-colors"
+                  >
+                    E-Commerce Dashboard
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    A comprehensive dashboard for online retailers to manage inventory, track sales,
+                    and analyze customer behavior in real-time. Built with performance and
+                    accessibility in mind.
+                  </p>
+                  <ul class="flex flex-wrap gap-2 mb-6">
+                    <li
+                      class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono text-gray-600 dark:text-gray-300"
+                    >
+                      React
+                    </li>
+                    <li
+                      class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono text-gray-600 dark:text-gray-300"
+                    >
+                      D3.js
+                    </li>
+                    <li
+                      class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono text-gray-600 dark:text-gray-300"
+                    >
+                      Firebase
+                    </li>
+                  </ul>
+                  <a
+                    class="inline-flex items-center font-bold text-sm hover:underline decoration-2 underline-offset-4"
+                    href="#"
+                  >
+                    View Case Study
+                    <span class="material-symbols-outlined text-base ml-1">arrow_forward</span>
+                  </a>
+                </div>
+                <div class="order-1 md:order-2 md:col-span-7 w-full">
+                  <div
+                    class="bg-gray-100 dark:bg-gray-800 rounded-xl p-8 aspect-video flex items-center justify-center relative overflow-hidden group-hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 w-full"
+                  >
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900"
+                    ></div>
+                    <div
+                      class="relative w-3/4 h-3/4 bg-white dark:bg-black rounded shadow-lg border border-gray-200 dark:border-gray-700 p-4 transform group-hover:-translate-y-2 transition-transform duration-500"
+                    >
+                      <div class="flex gap-2 mb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                      </div>
+                      <div class="space-y-3">
+                        <div class="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/3"></div>
+                        <div class="grid grid-cols-3 gap-3">
+                          <div class="h-24 bg-primary/10 rounded"></div>
+                          <div class="h-24 bg-blue-100 dark:bg-blue-900/20 rounded"></div>
+                          <div class="h-24 bg-green-100 dark:bg-green-900/20 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="group">
+              <div class="h-1 w-12 bg-black dark:bg-white mb-6"></div>
+              <div class="flex flex-col md:grid md:grid-cols-12 gap-8 items-start">
+                <div class="order-2 md:col-span-5 md:order-2">
+                  <h3
+                    class="font-display font-bold text-3xl mb-4 group-hover:text-primary transition-colors"
+                  >
+                    TaskFlow App
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    A lightweight productivity tool designed to help remote teams collaborate
+                    effectively without the clutter of traditional project management software.
+                    Focus on "flow state".
+                  </p>
+                  <ul class="flex flex-wrap gap-2 mb-6">
+                    <li
+                      class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono text-gray-600 dark:text-gray-300"
+                    >
+                      Vue.js
+                    </li>
+                    <li
+                      class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono text-gray-600 dark:text-gray-300"
+                    >
+                      Supabase
+                    </li>
+                    <li
+                      class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono text-gray-600 dark:text-gray-300"
+                    >
+                      Tailwind
+                    </li>
+                  </ul>
+                  <a
+                    class="inline-flex items-center font-bold text-sm hover:underline decoration-2 underline-offset-4"
+                    href="#"
+                  >
+                    View Case Study
+                    <span class="material-symbols-outlined text-base ml-1">arrow_forward</span>
+                  </a>
+                </div>
+                <div class="order-1 md:col-span-7 md:order-1 w-full">
+                  <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl p-8 aspect-video flex items-center justify-center relative overflow-hidden group-hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 w-full"
+                  >
+                    <div
+                      class="absolute inset-0 bg-gradient-to-tr from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800"
+                    ></div>
+                    <div
+                      class="relative w-64 bg-white dark:bg-black rounded-2xl shadow-xl border-4 border-gray-900 dark:border-gray-600 p-2 transform rotate-3 group-hover:rotate-0 transition-transform duration-500"
+                    >
+                      <div
+                        class="h-full bg-gray-50 dark:bg-gray-900 rounded-xl p-3 overflow-hidden"
+                      >
+                        <div class="h-8 w-1/2 bg-gray-200 dark:bg-gray-800 rounded mb-4"></div>
+                        <div class="space-y-2">
+                          <div
+                            class="p-2 bg-white dark:bg-black rounded shadow-sm flex items-center gap-2 border border-gray-100 dark:border-gray-800"
+                          >
+                            <div class="w-4 h-4 border-2 border-primary rounded-full"></div>
+                            <div class="h-2 w-2/3 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                          </div>
+                          <div
+                            class="p-2 bg-white dark:bg-black rounded shadow-sm flex items-center gap-2 border border-gray-100 dark:border-gray-800"
+                          >
+                            <div class="w-4 h-4 border-2 border-gray-300 rounded-full"></div>
+                            <div class="h-2 w-1/2 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                          </div>
+                          <div
+                            class="p-2 bg-white dark:bg-black rounded shadow-sm flex items-center gap-2 border border-gray-100 dark:border-gray-800"
+                          >
+                            <div class="w-4 h-4 border-2 border-gray-300 rounded-full"></div>
+                            <div class="h-2 w-3/4 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-surface-light dark:bg-surface-dark py-24 px-6 md:px-12 border-t border-gray-200 dark:border-gray-800 w-full"
+      >
+        <div class="max-w-5xl mx-auto">
+          <h2 class="font-display font-bold text-4xl mb-12">Core Principles</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+            <div>
+              <div class="w-12 h-1 bg-black dark:bg-white mb-6"></div>
+              <h3 class="font-display font-bold text-2xl mb-4">User-Centric Design</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Every pixel serves a purpose. I prioritize user needs by creating intuitive
+                interfaces that reduce friction and help users achieve their goals effortlessly.
+              </p>
+            </div>
+            <div>
+              <div class="w-12 h-1 bg-black dark:bg-white mb-6"></div>
+              <h3 class="font-display font-bold text-2xl mb-4">Clean Architecture</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Code should be as beautiful as the interface. I write maintainable, scalable, and
+                self-documenting code that teams love to work with.
+              </p>
+            </div>
+            <div>
+              <div class="w-12 h-1 bg-black dark:bg-white mb-6"></div>
+              <h3 class="font-display font-bold text-2xl mb-4">Performance First</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Speed is a feature. I optimize assets, leverage modern browser capabilities, and
+                monitor metrics to ensure lightning-fast experiences.
+              </p>
+            </div>
+            <div>
+              <div class="w-12 h-1 bg-black dark:bg-white mb-6"></div>
+              <h3 class="font-display font-bold text-2xl mb-4">Accessible to All</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                The web is for everyone. I adhere to WCAG guidelines to ensure my digital products
+                are usable by people with diverse abilities and devices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer
+        class="pt-24 pb-12 px-6 md:px-12 bg-background-light dark:bg-background-dark relative w-full"
+        id="contact"
+      >
+        <div class="max-w-5xl mx-auto relative z-10">
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+            <div class="order-2 md:order-1">
+              <h2 class="font-display font-bold text-5xl md:text-6xl mb-6">
+                Ready to <br />collaborate?
+              </h2>
+              <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-md">
+                Currently available for freelance projects and open to full-time opportunities.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a
+                  class="bg-primary hover:bg-primary-dark text-black px-8 py-3 rounded-lg font-bold transition-colors shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto"
+                  href="mailto:hello@example.com"
+                >
+                  <span class="material-symbols-outlined">email</span>
+                  Email Me
+                </a>
+                <a
+                  class="bg-black dark:bg-white text-white dark:text-black border border-transparent hover:bg-gray-800 dark:hover:bg-gray-200 px-8 py-3 rounded-lg font-bold transition-colors shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto"
+                  href="#"
+                >
+                  Download CV
+                </a>
+              </div>
+            </div>
+            <div class="flex justify-center md:justify-end order-1 md:order-2">
+              <div class="w-64 h-64 relative">
+                <svg
+                  class="w-full h-full drop-shadow-xl"
+                  viewBox="0 0 200 200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M40 100 L40 160 C40 171 49 180 60 180 L140 180 C151 180 160 171 160 160 L160 120"
+                    fill="#FFD04B"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="6"
+                  ></path>
+                  <path
+                    d="M160 120 C160 120 180 120 180 90 C180 60 150 60 140 90 L140 120"
+                    fill="#FFD04B"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="6"
+                  ></path>
+                  <line
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-width="6"
+                    x1="160"
+                    x2="40"
+                    y1="120"
+                    y2="120"
+                  ></line>
+                  <path
+                    d="M70 180 L70 140"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-opacity="0.1"
+                    stroke-width="6"
+                  ></path>
+                  <rect
+                    fill="white"
+                    height="80"
+                    rx="4"
+                    stroke="black"
+                    stroke-width="6"
+                    width="20"
+                    x="20"
+                    y="90"
+                  ></rect>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-medium text-gray-500 dark:text-gray-400"
+          >
+            <p class="mb-4 md:mb-0 text-center md:text-left">
+              © 2024 Creative Developer. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+              <a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+                Twitter <span class="material-symbols-outlined text-xs">north_east</span>
+              </a>
+              <a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+                LinkedIn <span class="material-symbols-outlined text-xs">north_east</span>
+              </a>
+              <a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+                Dribbble <span class="material-symbols-outlined text-xs">north_east</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
