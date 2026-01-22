@@ -6,11 +6,8 @@ import { Button } from '@/components/ui/button'
 import { RouterLink } from 'vue-router'
 import { ArrowUpRight } from 'lucide-vue-next'
 
-const githubUrl = 'https://github.com/itsarman001/driverjs-example'
-
-const openExternalLink = (url: string) => {
-  window.open(url, '_blank')
-}
+import { openExternalLink } from '@/utils/utils'
+import { projectLink } from '@/constants/constants'
 </script>
 
 <template>
@@ -25,7 +22,7 @@ const openExternalLink = (url: string) => {
         <span class="capitalize">about</span>
       </RouterLink>
       <BaseTooltip text="Navigate to GitHub Repository">
-        <Button variant="link" @click="openExternalLink(githubUrl)" class="flex items-center">
+        <Button variant="link" @click="openExternalLink(projectLink)" class="flex items-center">
           <span>GitHub</span>
           <ArrowUpRight />
         </Button>
