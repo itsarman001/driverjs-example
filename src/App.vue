@@ -1,9 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MainLayout from "./layouts/MainLayout.vue";
+import HeroSection from "./components/HeroSection.vue";
+import AboutSection from "./components/AboutSection.vue";
+import ProjectsSection from "./components/ProjectsSection.vue";
+import ExperienceSection from "./components/ExperienceSection.vue";
+import ContactSection from "./components/ContactSection.vue";
+</script>
 
 <template>
-  <div class="flex items-center justify-center h-screen">
-    <span class="text-2xl font-bold">
-      Vite, Vue, Tailwind and Shadcn UI Template
-    </span>
-  </div>
+  <MainLayout>
+    <HeroSection />
+    <AboutSection />
+    <ProjectsSection />
+    <ExperienceSection />
+    <ContactSection />
+  </MainLayout>
 </template>
