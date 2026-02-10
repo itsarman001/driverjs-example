@@ -31,63 +31,65 @@ const scrollToSection = (sectionId: string) => {
         PORTFOLIO.
       </div>
 
-      <!-- Desktop Menu -->
-      <div
-        class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest"
-      >
-        <button
-          @click="scrollToSection('hero')"
-          class="hover:text-primary transition-colors"
+      <div class="flex items-center gap-8">
+        <!-- Desktop Menu -->
+        <div
+          class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest"
         >
-          Home
-        </button>
-        <button
-          @click="scrollToSection('about')"
-          class="hover:text-primary transition-colors"
-        >
-          About
-        </button>
-        <button
-          @click="scrollToSection('projects')"
-          class="hover:text-primary transition-colors"
-        >
-          Projects
-        </button>
-        <button
-          @click="scrollToSection('experience')"
-          class="hover:text-primary transition-colors"
-        >
-          Experience
-        </button>
-        <button
-          @click="scrollToSection('contact')"
-          class="hover:text-primary transition-colors"
-        >
-          Contact
-        </button>
-      </div>
+          <button
+            @click="scrollToSection('hero')"
+            class="hover:text-primary transition-colors"
+          >
+            Home
+          </button>
+          <button
+            @click="scrollToSection('about')"
+            class="hover:text-primary transition-colors"
+          >
+            About
+          </button>
+          <button
+            @click="scrollToSection('projects')"
+            class="hover:text-primary transition-colors"
+          >
+            Projects
+          </button>
+          <button
+            @click="scrollToSection('experience')"
+            class="hover:text-primary transition-colors"
+          >
+            Experience
+          </button>
+          <button
+            @click="scrollToSection('contact')"
+            class="hover:text-primary transition-colors"
+          >
+            Contact
+          </button>
+        </div>
 
-      <div class="flex items-center gap-4">
-        <!-- Dark Mode Toggle -->
-        <button
-          @click="toggleDarkMode"
-          class="text-primary hover:text-primary/80 transition-colors"
-          :title="isDark ? 'Light mode' : 'Dark mode'"
-        >
-          <span class="material-icons">{{
-            isDark ? "light_mode" : "dark_mode"
-          }}</span>
-        </button>
+        <div class="flex items-center gap-4">
+          <!-- Dark Mode Toggle -->
+          <button
+            @click="toggleDarkMode"
+            class="text-primary hover:text-primary/80 transition-colors"
+            :title="isDark ? 'Light mode' : 'Dark mode'"
+          >
+            <span class="material-icons">{{
+              isDark ? "light_mode" : "dark_mode"
+            }}</span>
+          </button>
 
-        <!-- Mobile Menu Button -->
-        <button
-          @click="isMobileMenuOpen = !isMobileMenuOpen"
-          class="md:hidden text-primary"
-        >
-          <span class="material-icons">{{
-            isMobileMenuOpen ? "close" : "menu"
-          }}</span>
-        </button>
+          <!-- Mobile Menu Button -->
+          <button
+            @click="isMobileMenuOpen = !isMobileMenuOpen"
+            class="md:hidden text-primary"
+          >
+            <span class="material-icons">{{
+              isMobileMenuOpen ? "close" : "menu"
+            }}</span>
+          </button>
+        </div>
       </div>
     </div>
 
