@@ -1,39 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
+import { useDarkMode } from "../composables/useDarkMode.js";
 
 const isMobileMenuOpen = ref(false);
-const isDark = ref(false);
-
-const toggleDarkMode = () => {
-  isDark.value = !isDark.value;
-  if (isDark.value) {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  }
-};
-
-onMounted(() => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    isDark.value = true;
-    document.documentElement.classList.add("dark");
-  } else if (savedTheme === "light") {
-    isDark.value = false;
-    document.documentElement.classList.remove("dark");
-  } else {
-    // Check system preference if no saved theme
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    isDark.value = prefersDark;
-    if (prefersDark) {
-      document.documentElement.classList.add("dark");
-    }
-  }
-});
+const { isDark, toggleDarkMode } = useDarkMode();
 
 const scrollToSection = (sectionId: string) => {
   isMobileMenuOpen.value = false;
