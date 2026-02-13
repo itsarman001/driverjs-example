@@ -54,12 +54,12 @@ const handleSubmit = async () => {
   }
 };
 
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-};
+// const scrollToSection = (sectionId: string) => {
+//   const element = document.getElementById(sectionId);
+//   if (element) {
+//     element.scrollIntoView({ behavior: "smooth" });
+//   }
+// };
 </script>
 
 <template>
